@@ -1,11 +1,11 @@
 'use strict';
 
 var path = process.cwd();
-var ClickHandler = require(path + '/app/controllers/clickHandler.server.js');
+var HeaderParser = require(path + '/app/controllers/headerParser.server.js');
 
 module.exports = function (app) {
 
-	var clickHandler = new ClickHandler();
+	var headerParser = new HeaderParser();
 
 	app.route('/')
 		.get(function (req, res) {
@@ -13,5 +13,5 @@ module.exports = function (app) {
 		});
 
 	app.route('/api/whoami')
-		.get(clickHandler.getClicks)
+		.get(headerParser.whoami)
 };
