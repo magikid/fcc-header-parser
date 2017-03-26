@@ -18,21 +18,8 @@ defmodule HeaderParser.ModelCase do
     quote do
       alias HeaderParser.Repo
 
-      import Ecto
-      import Ecto.Changeset
-      import Ecto.Query
       import HeaderParser.ModelCase
     end
-  end
-
-  setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(HeaderParser.Repo)
-
-    unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(HeaderParser.Repo, {:shared, self()})
-    end
-
-    :ok
   end
 
   @doc """
@@ -59,7 +46,5 @@ defmodule HeaderParser.ModelCase do
   """
   def errors_on(struct, data) do
     struct.__struct__.changeset(struct, data)
-    |> Ecto.Changeset.traverse_errors(&HeaderParser.ErrorHelpers.translate_error/1)
-    |> Enum.flat_map(fn {key, errors} -> for msg <- errors, do: {key, msg} end)
   end
 end

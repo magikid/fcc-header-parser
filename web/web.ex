@@ -18,11 +18,6 @@ defmodule HeaderParser.Web do
 
   def model do
     quote do
-      use Ecto.Schema
-
-      import Ecto
-      import Ecto.Changeset
-      import Ecto.Query
     end
   end
 
@@ -31,9 +26,6 @@ defmodule HeaderParser.Web do
       use Phoenix.Controller
 
       alias HeaderParser.Repo
-      import Ecto
-      import Ecto.Query
-
       import HeaderParser.Router.Helpers
       import HeaderParser.Gettext
     end
@@ -65,9 +57,6 @@ defmodule HeaderParser.Web do
     quote do
       use Phoenix.Channel
 
-      alias HeaderParser.Repo
-      import Ecto
-      import Ecto.Query
       import HeaderParser.Gettext
     end
   end

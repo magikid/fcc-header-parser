@@ -21,9 +21,6 @@ defmodule HeaderParser.ConnCase do
       use Phoenix.ConnTest
 
       alias HeaderParser.Repo
-      import Ecto
-      import Ecto.Changeset
-      import Ecto.Query
 
       import HeaderParser.Router.Helpers
 
@@ -33,12 +30,6 @@ defmodule HeaderParser.ConnCase do
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(HeaderParser.Repo)
-
-    unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(HeaderParser.Repo, {:shared, self()})
-    end
-
     {:ok, conn: Phoenix.ConnTest.build_conn()}
   end
 end

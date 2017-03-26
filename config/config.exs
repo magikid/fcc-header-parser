@@ -5,10 +5,6 @@
 # is restricted to this project.
 use Mix.Config
 
-# General application configuration
-config :header_parser,
-  ecto_repos: [HeaderParser.Repo]
-
 # Configures the endpoint
 config :header_parser, HeaderParser.Endpoint,
   url: [host: "localhost"],

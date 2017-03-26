@@ -13,6 +13,11 @@ defmodule HeaderParser.Router do
     plug :accepts, ["json"]
   end
 
+  scope "/api", HeaderParser do
+    pipe_through :api
+    get "/whoami", UserController, :index
+  end
+
   scope "/", HeaderParser do
     pipe_through :browser # Use the default browser stack
 

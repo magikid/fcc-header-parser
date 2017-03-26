@@ -21,23 +21,9 @@ defmodule HeaderParser.ChannelCase do
       use Phoenix.ChannelTest
 
       alias HeaderParser.Repo
-      import Ecto
-      import Ecto.Changeset
-      import Ecto.Query
-
 
       # The default endpoint for testing
       @endpoint HeaderParser.Endpoint
     end
-  end
-
-  setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(HeaderParser.Repo)
-
-    unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(HeaderParser.Repo, {:shared, self()})
-    end
-
-    :ok
   end
 end

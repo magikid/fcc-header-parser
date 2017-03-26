@@ -8,12 +8,3 @@ config :header_parser, HeaderParser.Endpoint,
 
 # Print only warnings and errors during test
 config :logger, level: :warn
-
-# Configure your database
-config :header_parser, HeaderParser.Repo,
-  adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
-  database: "header_parser_test",
-  hostname: "localhost",
-  pool: Ecto.Adapters.SQL.Sandbox
