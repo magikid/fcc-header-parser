@@ -1,22 +1,20 @@
 {
-  "name": "fcc-header-parser",
-  "version": "1.0.0",
-  "description": "Parse the headers passed by a browser",
-  "main": "server.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/magikid/fcc-header-parser"
-  },
-  "homepage": "",
+  "repository": {},
+  "license": "MIT",
   "scripts": {
-    "start": "node server.js"
+    "deploy": "brunch build --production",
+    "watch": "brunch watch --stdin"
   },
-  "author": "Chris Jones",
-  "license": "GPL-3.0",
   "dependencies": {
-    "dotenv": "^1.2.0",
-    "express": "^4.12.4",
-    "express-session": "^1.11.3",
-    "mongoose": "^4.1.0"
+    "phoenix": "file:deps/phoenix",
+    "phoenix_html": "file:deps/phoenix_html"
+  },
+  "devDependencies": {
+    "babel-brunch": "~6.0.0",
+    "brunch": "2.7.4",
+    "clean-css-brunch": "~2.0.0",
+    "css-brunch": "~2.0.0",
+    "javascript-brunch": "~2.0.0",
+    "uglify-js-brunch": "~2.0.1"
   }
 }
